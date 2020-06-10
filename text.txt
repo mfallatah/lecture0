@@ -1,4 +1,5 @@
 To add file = touch filename.extention
             = git add filename.extention
             = git commit -m "massege"
+Last tow line must added in gitbash if there is any modifiled.
 ---------------------------------------
