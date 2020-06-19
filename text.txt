@@ -10,3 +10,5 @@ https://www.file-hunter.com/MSX/index.php?id=castle
 <link rel="stylesheet" herf="styles.css">
 
 1:15
+mfallatah@Mohammeds-MacBook-Air ~ % pbcopy < ~/.ssh/id_rsa.pub
+امر لنسخ  محتوى المفتاح الخاص لجهاز الماك
