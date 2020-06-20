@@ -7,8 +7,24 @@ this is the link in 20 minuties
 https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/courseware/3b4d945d89eb40bcad81746770a81c3b/918082613c254e2da55e31d1894bc4be/
 https://www.file-hunter.com/MSX/index.php?id=castle
 
-<link rel="stylesheet" herf="styles.css">
+<link rel="stylesheet" herf="styles.css"> 
+الربط بين css and html
 
 1:15
 mfallatah@Mohammeds-MacBook-Air ~ % pbcopy < ~/.ssh/id_rsa.pub
 امر لنسخ  محتوى المفتاح الخاص لجهاز الماك
+
+
+لانشاء فرع للمسار 
+git branch feature
+
+للانتقال اليه
+git checkout feature
+
+لمعرفة البرانش اللي انا شغال عليه الان
+git branch
+
+للعودة الى الماستر برانش.
+git checkout master
+
+
