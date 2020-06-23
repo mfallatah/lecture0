@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>differences</title>
+        <!--يجعل جميع محتوآ الصفحة ظاهر في صفحة واحدة-->
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* يعرض المحتوى على حسب عرض الصفحة*/
+            @media (min-width: 700px) {
+                h1::before {
+                    content: "WELCOME TO MY WEB PAGE";
+                    background-color: teal;
+                }
+            }
+            @media (max-width:699px) {
+                h1::before {
+                    content: "WELCOM";
+                    background-color: tomato;
+                }
+            }
+     
+        </style>
+    </head>
+    <body>
+        <h1></h1>
+    </body>
+</html>
