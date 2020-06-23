@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+
+        <style>
+            h1, h2 {
+                color: red;
+            }
+           /*يجري التغيير على القائمة الررئيسية وما بداخلها*/
+            ol li { 
+                color: blue;
+            }
+            input[type="text"] {
+                  background-color: red;
+            }
+            input[type=number] {
+                   background-color: blue;
+            
+            }
+
+            button {
+                width: 200px;
+                height: 50px;
+                font-size: 24px;
+                background-color: cadetblue; 
+            }
+
+            /*عند المرور على الزر بالماوس يتغير لونه*/
+            button:hover {
+                 background-color: orange; 
+            }
+      
+      
+      </style>
+    </head>
+        
+        
+        <body>
+             <h1>Big Headline</h1>
+             <h2>Smaller Headline</h2>
+
+
+               <ol>
+                   <li>List item one</li>
+                   <li>List item tow</li>
+
+                   <ul>
+                       <li>Sublist Item one</li>
+                       <li>Suplist Item tow</li>
+                   </ul>
+                   <li>List Item three</li>
+               </ol>
+
+               <ul>
+                   <li>List item four</li> <!--لم تتاثر بالتغييرات لانها خارج ol-->
+               </ul>
+
+               <form>
+                   <input name="text" type="text" placeholder="Firstname">
+                   <input name="text" type="number" placeholder="Password">
+                   <input name="text" type="text" placeholder="Email" > 
+               </form>
+               <br>
+                <button>Click me</button>
+
+         </body>
+    
+</html>
