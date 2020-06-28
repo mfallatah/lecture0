@@ -27,6 +27,10 @@ git branch
 للعودة الى الماستر برانش.
 git checkout master
 
+
+تعليم الكتابة للاطفال
+https://kgoo.blogspot.com/2016/10/blog-post.html
+
 لدمج الفرع بالاساس نكون في الماستر ثم نكتب الامر ون-كون في الماستر
 git merge feature 
 
