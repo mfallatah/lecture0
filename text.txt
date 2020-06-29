@@ -27,6 +27,10 @@ git branch
 للعودة الى الماستر برانش.
 git checkout master
 
+cd .. العودة الى المسار السابق
+dir  يعرض المحتويات الموجودة في الملف
+cls يمسح محتويات الصفحة 
+
 
 تعليم الكتابة للاطفال
 https://kgoo.blogspot.com/2016/10/blog-post.html
@@ -38,3 +42,5 @@ https://matfaletchay.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%88-%D8%AA%D8%B1%D9%8
 
 https://getbootstrap.com/docs/4.5/components/alerts/
 
+برامج ادوبي
+https://www.youtube.com/watch?v=fklHbdsBAS0
