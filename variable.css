@@ -1,0 +1,12 @@
+div {
+    color: red;
+    div ul {
+        color: blue;
+    }
+
+    div ol {
+        color: green;
+    }
+
+
+}
