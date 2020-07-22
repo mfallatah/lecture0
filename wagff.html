@@ -9,22 +9,22 @@
 
     <body>
         <H1>نموذج تسجيل بيانات</H1>
-    <form>
-         <input type="text" placeholder="الاسم الاول">
-         <input type="text" placeholder="اسم الأب">
-         <input type="text" placeholder="اسم الجد">
-         <input type="text" placeholder=" اللقب">
-         <input type="number" placeholder="رقم الهوية ">
-         <input type="date" placeholder=" تاريخها ">
-         <input type="date" placeholder="تاريخ الانتهاء">
-         <input type="date" placeholder=" تاريخ الميلاد">
-         <input type="text" placeholder=" مكان الميلاد">
-         <input type="text" placeholder=" رقم الجوال">
+    <form action="insert.php" method="POST">
+         <input type="text" placeholder="الاسم الاول" name="firstname">
+         <input type="text" placeholder="اسم الأب"name="fathername">
+         <input type="text" placeholder="اسم الجد" name="thirdname">
+         <input type="text" placeholder=" اللقب" name="fourthname">
+         <input type="number" placeholder="رقم الهوية " name="nid">
+         <input type="date" placeholder=" تاريخها " name="iddate">
+         <input type="date" placeholder="تاريخ الانتهاء" name="idexp">
+         <input type="date" placeholder=" تاريخ الميلاد" name="born">
+         <input type="text" placeholder=" مكان الميلاد" name="bornl">
+         <input type="text" placeholder=" رقم الجوال" name="mobile">
          
 
          <div>
-             <input type="radio" id="male" name="gender"> <label for="male">ذكر</label>
-             <input type="radio" id="fmale" name="gender"> <label for="fmale">انثى</label>
+             <input type="radio" id="male" name="gender" name="m"> <label for="male">ذكر</label>
+             <input type="radio" id="fmale" name="gender" value="f"> <label for="fmale">انثى</label>
 
          </div>
 
