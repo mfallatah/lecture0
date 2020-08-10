@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RegisterPage</title>
+    </head>
+        <body>
+             <form action="insert.php" method="POST">
+                 <table>
+                     <tr>
+                         <td>
+                            Name :
+                         </td>
+                         <td>
+                             <input type="text" placeholder="Name" name="username" required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>
+                             Password
+                         </td>
+                         <td>
+                            <input type="Password" placeholder="Password" name="password" required >
+                         </td>
+                     <tr>
+                         <td>
+                             Gender
+                         </td>
+                         <td>
+                             <input type="radio" name="gender" value="m" required>Male
+                             <input type="radio" name="gender" value="f" required>Female
+                         </td>
+                     </tr>    
+                     </tr>
+                     <tr>
+                         <td>
+                             Email
+                         </td>
+                         <td>
+                             <input type="maile" placeholder="Email" name="email" required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>
+                             phone no
+                         </td>
+                         <td>
+                             <select name="phoneCode" required>
+                                 <option selected hidden value="">Select Code</option>
+                                 <option value="966">966</option>
+                                 <option value="965">965</option>
+                                 <option value="963">963</option>
+                                 <option value="962">962</option>
+                                 <option value="961">961</option>
+                                 <option value="960">960</option>
+                                 <option value="967">967</option>
+                             </select>
+                             <input type="Phone" name="phone" placeholder="05*****" required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>
+                             <input type="Submit" value="Submit">
+                         </td>
+                     </tr>
+                 </table>
+             </form>
+        </body>    
+</html>
