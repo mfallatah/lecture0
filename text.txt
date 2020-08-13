@@ -54,3 +54,4 @@ https://www.youtube.com/watch?v=D4jj3HHrnSU
 
 Placeholder : النص اللي يظهر داخل المستطيل
 name : الاسم اللي نربطه بجدول قاعدة البيانات
+action in php (where to send data from this form)There are two 1-Method"POST" and "GET"where secure method is "POST"
