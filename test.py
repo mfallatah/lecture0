@@ -1,7 +1,7 @@
-print("Hello World")
-name = input ("ENTER YOUR NAME : ")
-print("----------------")
-print ( "Hello " + name)
-print ("---------------")
+import random
+print (random.randint(10,20))
 
-input("press enter to exit...")
+from random import randint
+print (randint(20,30))
+
+
