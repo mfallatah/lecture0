@@ -6,15 +6,15 @@ bg  = 'lightblue'
 fg  = 'navy'
 
 # دالة عشان نبرمج الازارير اللي في الواجهة الرئيسية وضيفتها اني اعطيها اسم الفورم وهي تشغله
-#def opentop (name): 
- #   frm = None
-  #  if name == 'emp' : frm = employee()
-   # if name == 'dept': frm = department()
-    #if name == 'item': frm = item()
-   # bgall(frm,bg)
-    #fgall(frm,fg)
-    #fontall(frm,fnt)
-    #frm.grab_set()
+def opentop (name): 
+    frm = None
+    if name == 'emp' : frm = employee()
+    if name == 'dept': frm = department()
+    if name == 'item': frm = item()
+    bgall(frm,bg)
+    fgall(frm,fg)
+    fontall(frm,fnt)
+    frm.grab_set()
 
 # هذا الفورم الاول ومن داخله نستطيع الانتقال الى القسام الاخرى 
 # frm_main  = notfixed , form = fixed from tools , label.buttons,bgall,fgall,fontall are from tolls
