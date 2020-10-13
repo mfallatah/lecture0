@@ -44,7 +44,11 @@ def frame (form,bg=None) :
 # انشاء زر سهل 
 def button (form,text='Button',command=None):
     btn= ttk.Button(form,text=text)
+<<<<<<< HEAD
     if command != None:
+=======
+    if command != None :
+>>>>>>> ed836808c781bc41082f2b9e92be8178e7b7b340
         btn.config(command=command)
     return btn
 
