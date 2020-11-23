@@ -1,0 +1,68 @@
+
+انشاء جدول داخل قاعدة بيانات موجودة
+import mysql.connector
+
+db = mysql.connector.connect(
+    host ="localhost",
+    user ="userpython",
+    passwd = "123456",
+    database="fallatah"
+    )
+
+mycursor = db.cursor()
+
+mycursor.execute("CREATE TABLE  Person (name VARCHAR(30), age smallint UNSIGEND, personID varchar PRIMARY KEY)")
+-----------------------------------------------------
+وصف للاعمدة الاسم والنوع والبيانات المهمة
+import mysql.connector
+
+db = mysql.connector.connect(
+    host ="localhost",
+    user ="userpython",
+    passwd = "123456",
+    database="fallatah"
+    )
+
+cu = db.cursor()
+#cu.execute("CREATE TABLE Person (name varchar(50), age smallint UNSIGNED , personID int PRIMARY KEY AUTO_INCREMENT)")
+cu.execute("DESCRIBE Person")
+for x in cu:
+    print (x)
+
+----------------------
+اضافة العناصر للجدول
+في هذا المثال نحط الاسم والعمر فقط ولانحط التعداد لانه تلقائي 
+نقدر نضيف اسماء اخرى عن طريق مسخ الاسم الحالي وحاينظلف بعد القديم
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host ="localhost",
+    user ="userpython",
+    passwd = "123456",
+    database="fallatah"
+    )
+
+cu = db.cursor()
+#cu.execute("CREATE TABLE Person (name varchar(50), age smallint UNSIGNED , personID int PRIMARY KEY AUTO_INCREMENT)")
+cu.execute("INSERT INTO Person (name, age) VALUES (%s,%s)",("MOHAMMED",19))
+db.commit()
+---------------------------------------------
+للحصول على كل الاعمد والصفوف في الجدول
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host ="localhost",
+    user ="userpython",
+    passwd = "123456",
+    database="fallatah"
+    )
+
+cu = db.cursor()
+cu.execute("SELECT * FROM Person")
+for x in cu:
+    print(x)
+-------------------------------------------
+
+
