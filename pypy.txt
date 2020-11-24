@@ -1,0 +1,60 @@
+انشاء جدول على قاعدة بيانات موجودة
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host= "localhost",
+    user = "fallath",
+    passwd ="123456",
+    database ="fallatah"
+    )
+cu = db.cursor()
+cu.execute("CREATE TABLE employee(empID int primary key auto_increment,name varchar(50),age int, salary int )")
+------------------------------------------------------------
+اضافة عناصر الى الجدول 
+
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host= "localhost",
+    user = "fallath",
+    passwd ="123456",
+    database ="fallatah"
+    )
+cu = db.cursor()
+cu.execute("INSERT INTO employee(name, age, salary)VALUES(%s,%s,%s)",("MOHAMMED","23","15000"))
+db.commit()
+----------------------------------------------------------- 
+يستعرض البيانات الموجودة في الجدول
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host= "localhost",
+    user = "fallath",
+    passwd ="123456",
+    database ="fallatah"
+    )
+cu = db.cursor()
+#cu.execute("CREATE TABLE employee(empID int primary key auto_increment,name varchar(50),age int, salary int )")
+cu.execute("SELECT * FROM employee")
+for x in cu:
+    print(x)
+------------------------------------------------------------
+هذا نفس المثال اللي فوق لكن فيه مدخل يعطينا الوقت اللي ادخلنا فيه المدخل
+
+import mysql.connector
+from datetime import datetime
+
+db = mysql.connector.connect(
+    host= "localhost",
+    user = "fallath",
+    passwd ="123456",
+    database ="fallatah"
+    )
+cu = db.cursor()
+#cu.execute("CREATE TABLE etime(id int primary key not null auto_increment,name varchar(50) not null, created datetime not null, gender enum('M','F') not null)")
+cu.execute("INSERT INTO etime(name,created,gender)VALUES(%s,%s,%s)",("SARAH", datetime.now(), "F"))
+db.commit()
+--------------------------------------------------------
