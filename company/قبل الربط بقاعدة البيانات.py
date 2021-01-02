@@ -11,8 +11,7 @@ class Register:
         self.root.config(bg="black")
         
         # لاضافة صورة رمزية في اعلى طرف النموذج
-        #
-        # self.root.iconbitmap('c:/Users/DAR-S19021/Desktop/company/images/te.ico')
+        #self.root.iconbitmap('c:/Users/DAR-S19021/Desktop/company/images/te.ico')
         
         # === Bg image ==
         # هنا اضفنا الخلفية ولاضافتها اضفنا السطر الثاني اللي يستدعي الصور من المكتبة
@@ -95,38 +94,14 @@ class Register:
         elif self.var_chk.get()==0:
             messagebox.showerror("Error","Plase agree Terms And Conditions",parent=self.root)
         else:
-            
-            
-            try:
-                db = mysql.connector.connect(
-                    host= "localhost",
-                    user = "fallath",
-                    passwd ="123456",
-                    database ="fallatah"
-                    )
-                cur = db.cursor()
-                #عشان نمنع التسجيل بنفس الايميل لاكثر من مستخدم
-                cur.execute("select * from employee1 where email=%s",self.txt_email.get())
-                row = cur.fetchone()
-                print(row)
-                cur.execute("insert into employee1(f_name,l_name,contact,email,ques,answer,password)values(%s,%s,%s,%s,%s,%s,%s)",
-                             (self.txt_fname.get(),
-                             self.txt_lname.get(),
-                             self.txt_contact.get(),
-                             self.txt_email.get(),
-                             self.cmp_ques.get(),
-                             self.txt_answer.get(),
-                             self.txt_password.get()
-                             ))
-                db.commit()
-                db.close()
-                messagebox.showinfo("Success","Register Successful",parent=self.root)
-            except Exception as es:
-                messagebox.showerror("Error","Error due to: {str(es)}",parent=self.root)
-            
+            #try:
 
 
-            
+            #except Exception as es:
+                 #messagebox.showerror("Error","Error due to:{str(es)}",parent=self.root)
+
+
+            messagebox.showinfo("success","Register Successful",parent=self.root)
 
         """
         هنا لو نبغى نطبع المدخلات نشيل كلمة اف  وكل الشروط
