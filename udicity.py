@@ -1,13 +1,13 @@
 import turtle
 jack = turtle.Turtle()
-jack.color("red")
+jack.color("blue")
 
 def draw_squre():
     for side in range(4):
         jack.forward(100)
         jack.right(90)
 jack.penup()
-jack.back(100)
+jack.forward(100)
 jack.pendown()
 
 draw_squre()
