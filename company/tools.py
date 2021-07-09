@@ -44,7 +44,6 @@ def frame (form,bg=None) :
 # انشاء زر سهل 
 def button (form,text='Button',command=None):
     btn= ttk.Button(form,text=text)
-    btn.config(command=command)
     return btn
 
 # انشاء ليبل
