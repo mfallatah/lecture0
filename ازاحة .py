@@ -41,6 +41,12 @@ t.forward(100)
 t.pendown()
 ballon(t, "purple")
 
+t.penup()
+t.home()
+t.forward(200)
+t.pendown()
+ballon(t, "green")
+
 t.hideturtle()
 
 
