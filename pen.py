@@ -6,7 +6,7 @@ def draw_squar(who, length):
 
 def draw_flower(size, petals):
     doodler=turtle.Turtle()
-    doodler.color=("orange")
+    doodler.color=("red")
     doodler.width=(3)
     for petal in range (petals):
         draw_squar(doodler, size)
