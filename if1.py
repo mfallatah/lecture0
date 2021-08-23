@@ -29,6 +29,8 @@ mellie.pendown()
 
 mellie.color("red")
 for bloom in range(4):
+    if bloom ==3:                # هذي السطرين تمت اضافتها لتغيير لون الزهرة الاخيرة باستخدام اف  وبامكاننا الغائها
+        mellie.color("green")
     flower(mellie)
     mellie.penup()
     mellie.forward(100)
