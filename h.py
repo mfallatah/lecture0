@@ -9,7 +9,9 @@ print(b)
 print(fow)
 print(abl)
 '''
+'''
 
+'''
 
 '''
 x = "moahmmed"
@@ -63,7 +65,42 @@ b = [1,2,3,4,'mo',4+3,6]
 print(b[::]) # يطبعها كلها 
 """
 
-""""
+"""
+s = {'Hello', 'welcome', 3} # هذه الاقواس معناها ان البيانات تكون مجموعة 
+print(type(s))
+# tuble and list are order 
+# we can't make change in tuble
+# In set we can make change by add or change or remove
+"""
+
+"""
+s = {'A':5,'B':'Hello'} # في الست نقدر قيمة عنطر معين بذكر اسمه ولا نستطيع طباعة قيمته عن طريق الاندكس
+print(s['A'])
+
+"""
+
+"""
+Data structure Order Multible  Construction      Example
+List           yes    yes   []  or list   0 ()   [1,2,3,4,5]
+Tuble          Yes    No    ()  or tuple()       (1,2,3,4,5)
+Set            No     Yes   {}  or set ()        {1,2,3,4,5}
+Dictionary     No     No    {}  or dict()        {'dec':14, 'Apr': 15}
+"""
+
+
+"""
+s = {'Hello', 'welcome', 3}
+s |={'mohammed', 'fallatah'} # | يدمج بين المجموعتين مع ان لها نفس الاسم
+print(s)
+"""
+
+"""
+s = {'Hello', 'welcome', 3}
+s.add('course') # للاضافة على القائمة السابقة
+print(s)
+
+"""
+"""
 c = [1,2,3,4,5,'mf',6]
 print(c[::-1])# يطبعها بالعكس
 """
@@ -116,4 +153,3 @@ lbl3.pack()
 form.mainloop()
 input ('Press Enter')
 """
-8:16
