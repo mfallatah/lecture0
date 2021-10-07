@@ -88,6 +88,9 @@ Dictionary     No     No    {}  or dict()        {'dec':14, 'Apr': 15}
 """
 
 
+
+
+
 """
 s = {'Hello', 'welcome', 3}
 s |={'mohammed', 'fallatah'} # | يدمج بين المجموعتين مع ان لها نفس الاسم
