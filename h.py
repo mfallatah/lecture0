@@ -109,6 +109,55 @@ print(c[::-1])# يطبعها بالعكس
 """
 
 """
+استخدام الدوال الحسابية 
+10**2  = ten power 2
+3/ float
+3/ / integer
+
+Implicit  =  ضمني  تكون متضمنة في العمليات ليست صريحة ماينفع تتنفذ على طول
+
+"""
+"""
+number1 = 10
+number2 = 10.0
+print(type(number1))
+print(type(number2))
+result = number1 + number2
+print(result)
+"""
+
+"""
+
+print("Hello world", "Mohammed", "madinah", sep='****')
+كلمة sep  تضع لي ماضعه بين القوسين بعد كل فاصلة
+
+
+"""
+
+"""
+print("Hello world", "Mohammed", "madinah", sep='****', end ="FALLATAH")
+
+x = 10
+y = 100
+print("The result {1} {0} ".format(x,y))
+"""
+"""
+
+number = 10.222222222
+print("The result of number is %.4f"%number)
+#يطبع فقط 4 ارقام بعد الفاصلة او حسب مانحدد 
+"""
+
+"""
+
+number = 10.222222222
+print("The result of number is %10.4f"%number)
+# الرقم 10 قبل الفاصة يحط مسافة بادئة ونقدر نغيرها 
+"""
+
+
+
+"""
 c = [1,2,3,4,5,'mf',6]
 print(c[::-2]) #  يطبعها بالعكس ياخذ خانة ويلغي خانة 
 """
