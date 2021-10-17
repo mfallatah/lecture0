@@ -143,6 +143,8 @@ print("The result {1} {0} ".format(x,y))
 """
 """
 
+
+
 number = 10.222222222
 print("The result of number is %.4f"%number)
 #يطبع فقط 4 ارقام بعد الفاصلة او حسب مانحدد 
@@ -170,6 +172,66 @@ a =[1,2,3,4,5,'mohammed', 4+3]
 print(a) # طباعة قائمة حتى لوكانت انواع البيانات مختلفة
 
 """
+"""
+# مربع ادخال
+x = input("inter Your Name")# ماداخل القوسين ممكن نغيره او نخليه فاضي العادة تكون من نوع string
+print (x) 
+
+"""
+
+"""
+
+# لو نبغى نغير نوع الداتا في المدخل من نص الى ارقام او اي شيئ اخر
+x= input()
+print(type(int(x)))
+
+"""
+
+"""
+eval('10+20') #الدالة (veal) تاخذ العمليات من داخل النص وتنفذها 
+
+
+"""
+"""
+x = 10
+y  = 20
+if x > 10:
+  print(" x is bigger")
+else:
+  print("x is smaller")
+
+"""
+"""
+x = 10
+y = 20
+if x < y and x > 5:
+  print("true")
+else:
+  print("False")
+
+"""
+"""
+x = 10
+y = 20
+if x < y or x > 5:
+  print("true")
+else:
+  print("False")
+
+"""
+
+"""
+x = 10
+y = 20
+if not x < y: # not  تعكس الجملة اذا كانت صحيحة تصبح خاطئة والعكس
+  print("true")
+else:
+  print("False")
+"""
+"""
+
+"""
+"""
 
 """
 
@@ -177,31 +239,28 @@ print(a) # طباعة قائمة حتى لوكانت انواع البيانات
 
 """
 """
-
-"""
-"""
-
-"""
-
-"""
-
 """
 """
 """
-
 import tkinter
 from tkinter import ttk
 form = tkinter.Tk()
 form.geometry('600x400')
 lbl1 = ttk.Label(form , text = 'MOHAMMED')
+x1 = ttk.Entry(form, text = 'ENTER YOUR NAME' )
 lbl2 = ttk.Label(form , text = 'IBRAHIM')
 lbl3 = ttk.Label(form , text = 'FALLATAH')
 lbl3.config(background='navy',foreground='lightblue',font = ('impact',50),padding =20)
 lbl2.config(background='yellow',foreground='lightblue',font = ('impact',30),padding =(10,20,30,40))
+x1.config(background='black', text='ENTER YOUR NAME', foreground='lightblue',font =('impact',30))
 
 lbl1.pack()
+x1.pack()
 lbl2.pack()
 lbl3.pack()
+
+
 form.mainloop()
+
 input ('Press Enter')
 """
