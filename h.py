@@ -229,16 +229,36 @@ else:
   print("False")
 """
 """
+x = 10
+x+= 10
+print(x) # it is equal to x = x + 10 for all oprations / * - +
 
 """
 """
-
+x = 10
+y = 10
+print(id(x),id(y))
+print(x is y) # نسال هل القيميتين لهمانفس المكان في الميموري ويعطينا انها صحيحة ويمكن نكتب x is noy y
 """
 
 """
+x = [10,20,30]
+y = [10,20,30]
+print(id(x),id(y))
+print(x is y) # هنا يعطينا انها خاطئة 
+"""
+"""
+x = "hello"
+'h' in x
 
 """
 """
+# if and else statment
+x = 10
+if x <10:
+    print("yes")
+else:
+  print("No")
 """
 """
 """
@@ -263,4 +283,5 @@ lbl3.pack()
 form.mainloop()
 
 input ('Press Enter')
+"""
 """
