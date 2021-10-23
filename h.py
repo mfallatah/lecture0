@@ -452,7 +452,76 @@ print(fact(num))
 
 """
 """
-____________________________________________________
+______________________ LAMBDA , Mab And filter______________________________
+# تعريف الدالة بطريقة سريعة من غير مانعطيها اسم 
+# وبعد كذا نقدر نطبعها على الليس list
+# نستخدمها اذا انا ما ابغى احط  اسماء
+Example
+double = lambda x : x * 2
+print(double(10))
+# double name of function
+# lambda is fixed after name of function
+# x the value or parameter that i nneed to input
+# : after braket the equation that i need
+#  كل الدالة في سطر واحد اسم الدالة ثم كلمة لامبدا ثم البارميتر ثم المعادلة التي نريدها 
+
+"""
+"""
+double = lambda x,y : x + y *2 # هنا عشان الارقومنت مدخلين لازم  في الاوت بيت يكون مخرجين ايضا
+print(double(10,5))
+
+"""
+"""
+# في لامبادا في شيئين فلتر وماب الفرق الوحيد بينهم ان الفلتر ماينفذ العملية الا اذا  حصل عندي ترو
+
+my_list =[1,2,3,4,5,6,7,8,9,10]
+new_list = list(filter(lambda x : (x%2 == 0),my_list)) # المعادلة تقول انه يطبع الارقام الزوجية فقط اللي باقي قسمتها على 2 يساوي صفر
+print(new_list)
+# list at the begining means put the value in list 
+
+"""
+"""
+# مثال على الماب وهي مافيها شرط يتحقق وبدل كلمة فلتر نحط ماب 
+my_list =[1,2,3,4,5,6,7,8,9,10]
+new_list = list(map(lambda x : x * 2,my_list))
+print(new_list)
+_________________________________Global , ocalm Non Global ___________________________
+
+x = 'Global'
+def foo():
+   global x # معناها استخدم الاكس القلوبال عشان كذا حايطبعها مرتين 
+   x = x * 2
+   print("x inside :",x)
+foo()
+print(x)
+
+"""
+"""
+
+x = 5
+def foo():
+   x = 10
+   print("local",x) # اول شي راح يطبع الاكس اللي داخل الدالة 
+foo()
+print('Global',x) # ثم يطبع الاكس اللي خارج الدالة
+
+"""
+"""
+def foo():
+   x = "local"
+   def inner():
+      nonlocal x
+      x = "nonlocal"
+      print(x)
+   inner()
+   print(x)
+foo()
+
+
+
+
+
+
 
 import tkinter
 from tkinter import ttk
