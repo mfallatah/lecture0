@@ -1,10 +1,13 @@
-def fact(x): # 
-	if x == 1:
-		return 1
-	else:
-		return (x * fact(x-1))
-num = 3
-print(fact(num)) 
-# fact (3) = 3*fact(2)
-# fact (2) = 2*fact(1)
-# fact (1) = 1 وهنا تحقق الشرط اللي في ثاني سطر انه يوقف اذا كانت 
+n = int(input("Enter an Integer: "))
+
+if n in range(100) and n % 2 != 0: 
+        print ("weird")
+if n in range(2-5) and n % 2 ==0:
+		print("Not weird")
+if n in range(6-20) and n % 2 == 0 :
+	print("weird")
+if n % 2 == 0 and n > 20 :
+	print("Not weird")
+else:
+	pass
+
