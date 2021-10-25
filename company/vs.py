@@ -1,6 +1,5 @@
 #import mysql
 from tkinter import *
-<<<<<<< HEAD
 from PIL import Image
 #from PIL.Image import core as _imaging
 from tkinter import ttk,messagebox # عشان الكومبو بوكس في السؤال الا
@@ -19,11 +18,11 @@ db = mysql.connector.connect(
      passwd = "123456",
      database="fallatah"
      ) 
-=======
+
 from PIL import Image,ImageTk
 from tkinter import ttk,messagebox # عشان الكومبو بوكس في السؤال الامني
 import mysql.connector
->>>>>>> 0196bdaf11472086008656606f52100255c9ab0c
+
 
 class Register:
     def __init__(self,root):

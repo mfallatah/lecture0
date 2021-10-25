@@ -1,9 +1,15 @@
-enter = [1,2,3,4,5,6,7,8,9,10]
+import pySimpleGUI as sg
 
-if enter > 0:
-    if enter % 2 == 0:
-        print ("Number entered is greater than 0 and even")
-    else:
-        print ("Number enetred is greater than 0 and odd")
-else:
-    print ("Number entered is less than or equal to 0")
+sg.theme('darktea19')
+
+layout = [
+[sg.Text('Plaese Fill Out The Following Filed')],
+[sg.Text('Name',size=(15,1)), sg.InputText(key='Name')],
+[sg.Submit(), sg.Exit()]
+]
+
+
+
+
+
+# https://www.youtube.com/watch?v=svcv8uub0D0
