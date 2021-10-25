@@ -1,4 +1,4 @@
-import pySimpleGUI as sg
+import PySimpleGUI as sg
 
 sg.theme('darktea19')
 
@@ -7,6 +7,7 @@ layout = [
 [sg.Text('Name',size=(15,1)), sg.InputText(key='Name')],
 [sg.Submit(), sg.Exit()]
 ]
+window = sg.Window('Simple data entry form',layout)
 
 
 
