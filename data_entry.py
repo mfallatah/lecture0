@@ -18,17 +18,26 @@ layout = [
                           sg.Checkbox('Italy', key='Italy')],
 [sg.Text('No. of children', size=(15,1)), sg.Spin([i for i in range(0,16)],
                                                                    initial_value=0, key='Children')],
-[sg.Submit(), sg.Exit()] # زر الراسال وزر الاغلاق
+[sg.Submit(), sg.Button('Clear'), sg.Exit()] # زر الراسال وزر الاغلاق
 ]
 window = sg.Window('Simple data entry form',layout)
+
+def clear_input():
+    for key in values:
+        window[key]('')
+    return None
 
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Exit': # زر الاغلاق او علامة الاكس
         break # اذا حصل احد الشرطين اللي فوق انهي البرنامج
 
+    if event == 'Clear':
+        clear_input()
+
     if event == 'Submit':  # اذا كان الحدث الضغط على زر  submit يطبع قيمة values
         df = df.append(values, ignore_index=True)
         df.to_excel(EXCEL_FILE, index=False)
         sg.popup('Data saved!')
+        clear_input()
 window.close()
