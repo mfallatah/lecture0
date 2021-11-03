@@ -64,7 +64,7 @@ label.pack()
 # Entyr
 label_entry = Label(frame1, text=('user name'))
 label_entry.pack(side =LEFT)
-E1 = Entry(frame1, bd =2)
+E1 = Entry(frame1, bd =2) # سماكة الاطاار حول صندوق المدخلات
 E1.pack(side = LEFT)
 
 
