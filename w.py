@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
-class student:
+class Benifit:
     # انشاء نافذة البرنامج
     def __init__(self,root):
         self.root= root
@@ -119,7 +119,7 @@ class student:
         scroll_y = Scrollbar(Details_Frame, orient=VERTICAL)
         # ----- tree View ----------
         self.benifit_table = ttk.Treeview(Details_Frame,
-        columns=('العنوان','الجنس','البريد الالكتروني','رقم الجوال','اللقب','اسم الاب','اسم المستفيد','رقم الهوية'),
+        columns=('address','gender','email','mobile','fname','ffname','name','id'),
         xscrollcommand=scroll_x.set,
         yscrollcommand=scroll_y.set)   # هنا انشانا متغير العنوانجديد وهو متغير داخلي داخل المتغير استدعينا الاداة  Treeview وطلبنا منها تظهر في Details_Frame
         # الحقول  ل Treeview   هي اللي انشأنها لادخال بيانات المستفيدين
@@ -132,8 +132,25 @@ class student:
         scroll_y.config(command=self.benifit_table.yview)
 
         # كتابة اسماء الحقول في TREE Treeview  واسمي الحقول اللي انشأتها
-        #self.benifit_table['show']='headings'
-        #self.benifit_table.headings('العنوان', text='عنوان المستفيد')
+        self.benifit_table['show']='headings'
+        self.benifit_table.heading('address', text='عنوان المستفيد') # هذا هو headings  اضافة العنواين في ال treewiew
+        self.benifit_table.heading('gender', text='جنس المستفيد')
+        self.benifit_table.heading('email', text='البريد الالكتروني')
+        self.benifit_table.heading('mobile', text='رقم الجوال')
+        self.benifit_table.heading('fname', text='اللقب')
+        self.benifit_table.heading('ffname', text='اسم الأب')
+        self.benifit_table.heading('name', text='اسم المستفيد')
+        self.benifit_table.heading('id', text='رقم الهوية')
+        # التحكم بحجم الاسكرول عشان لايظهر الشريط
+        self.benifit_table.column('address', width=130)
+        self.benifit_table.column('gender',width=30)
+        self.benifit_table.column('email',width=70)
+        self.benifit_table.column('mobile',width=65)
+        self.benifit_table.column('fname',width=30)
+        self.benifit_table.column('ffname',width=30)
+        self.benifit_table.column('name',width=30)
+        self.benifit_table.column('id',width=65)
+
 
 
 
@@ -144,7 +161,7 @@ class student:
 
 
 root = Tk()
-ob = student(root)
+ob = Benifit(root)
 root.mainloop()
 
 

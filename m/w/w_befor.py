@@ -13,54 +13,81 @@ class Benifit:
         title.pack(fill=X)
 
 
-    # ادوات التحكم بالبرنامج
+        #---------------- VARIABLES    المتغيرات ------------
+        # هذه المتغيرات من اجل استدعائها في البرمجة
+        self.id_var=StringVar() # مو لازم نكتب var   وممكن نكتب اي اسم
+        self.name_var=StringVar()
+        self.sname_var=StringVar()
+        self.fname_var=StringVar()
+        self.mobile_var=StringVar()
+        self.email_var=StringVar()
+        self.gender_var=StringVar()
+        self.address_var=StringVar()
+        self.se_var=StringVar() # حق البحث
+        self.dell_var=StringVar() #
+
+
+
+
+
+
+
+
+
+
+        # ------------ ادوات التحكم بالبرنامج ---------------
         Manage_Frame = Frame(self.root, bg='white')
         Manage_Frame.place(x=1137,y=30,width=210,height=400)
+
         lbl_ID = Label(Manage_Frame, text=' رقم الهوية', bg='white')
         lbl_ID.pack()
-        ID_Entry = Entry(Manage_Frame, bd=2,justify='center')
+        ID_Entry = Entry(Manage_Frame, textvariable=self.id_var, bd=2,justify='center')
         ID_Entry.pack()
+
+
         lbl_name = Label(Manage_Frame, bg='white', text='اسم المستفيد') # bg = لون الخلفية
         lbl_name.pack()
-        name_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        name_entry = Entry(Manage_Frame, textvariable=self.name_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         name_entry.pack()
 
         lbl_sname = Label(Manage_Frame, bg='white', text='اسم الأب')
         lbl_sname.pack()
-        sname_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        sname_entry = Entry(Manage_Frame, textvariable=self.sname_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         sname_entry.pack()
 
         lbl_fname = Label(Manage_Frame, bg='white', text='اللقب')
         lbl_fname.pack()
-        fname_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        fname_entry = Entry(Manage_Frame, textvariable=self.fname_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         fname_entry.pack()
 
         lbl_mnum = Label(Manage_Frame, bg='white', text='رقم الجوال')
         lbl_mnum.pack()
-        mnum_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        mnum_entry = Entry(Manage_Frame, textvariable=self.mobile_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         mnum_entry.pack()
 
         lbl_email = Label(Manage_Frame, bg='white', text='البريد الألكتروني')
         lbl_email.pack()
-        email_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        email_entry = Entry(Manage_Frame, textvariable=self.email_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         email_entry.pack()
 
         lbl_gender = Label(Manage_Frame, bg='white', text=' الجنس')
         lbl_gender.pack()
-        combo_gender = ttk.Combobox(Manage_Frame) # عمل صندوق اختيار
+        combo_gender = ttk.Combobox(Manage_Frame, textvariable=self.gender_var) # عمل صندوق اختيار
         combo_gender['value']=('ذكر','انثى') # قيم صندوق الاختيار
         combo_gender.pack()
 
         lbl_addres = Label(Manage_Frame, bg='white', text='عنوان المستفيد')
         lbl_addres.pack()
-        addres_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        addres_entry = Entry(Manage_Frame, textvariable=self.address_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         addres_entry.pack()
 
         # حذف المستفيد
         lbl_del = Label(Manage_Frame, bg='white', fg='red', text='حذف المستفيد')
         lbl_del.pack()
-        del_entry = Entry(Manage_Frame, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
+        del_entry = Entry(Manage_Frame, textvariable=self.dell_var, bd=2, justify='center')  # bd = سماكة الاطار خول الفريم
         del_entry.pack()
+
+
 
 
 
@@ -104,11 +131,14 @@ class Benifit:
         combo_search['value']=('رقم الهوية','اسم المستفيد','اللقب','رقم الجوال','البريدالالكتروني')
         combo_search.place(x=880,y=12)
 
-        search_entry = Entry(search_Frame, justify='right', bd=2)
+        search_entry = Entry(search_Frame, textvariable=self.se_var, justify='right', bd=2)
         search_entry.place(x=740,y=13)
 
         se_btn = Button(search_Frame, text='بحث',bg='#3498DB', fg='white')
         se_btn.place(x=630,y=12,width=100, height=25)
+
+
+
 
         # ---------- Detailes    عرض النتائج والبياناا -------
         Details_Frame = Frame(self.root, bg='#F2F4F4')
@@ -168,3 +198,4 @@ root.mainloop()
 
 # https://www.youtube.com/watch?v=y2JbutNRSQo
 # ttk used for combobox , entry, label
+# https://www.youtube.com/watch?v=4ygq2fJa4ig
