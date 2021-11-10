@@ -191,19 +191,39 @@ class Benifit:
 
     def add_binifit(self): # self = تمرير البيانات من تلقاء نفسها
             con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
-            cur = con.cursor(),
+            cur = con.cursor()
             cur.execute("insert into binfit values(%s,%s,%s,%s,%s,%s,%s,%s)",(
-                                        self.address_var.get(),
+                                        self.address_var.get(), 
                                         self.gender_var.get(),
                                         self.email_var.get(),
                                         self.mobile_var.get(),
                                         self.fname_var.get(),
                                         self.sname_var.get(),
                                         self.name_var.get(),
-                                        self.id_var.get()
-                                         ))
+                                        self.id_var.get()       
+                                        ))
             con.commit()
             con.close()
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 root = Tk()
