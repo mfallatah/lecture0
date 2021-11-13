@@ -101,7 +101,7 @@ class Benifit:
         title1.pack(fill=X)# x = يلون خلفية العنوان باللون اللي احطه فوق في الب جي
 
         # اضافة الازارير
-        add_btn = Button(btn_Frame, text='اضافة المستفيد', bg='#85929E', fg='white',command=self.add_binifit)
+        add_btn = Button(btn_Frame, text='اضافة المستفيد', bg='#85929E', fg='white', command=self.add_binifit)
         add_btn.place(x=33,y=44,width=150,height=30)
 
         delt_btn = Button(btn_Frame, text='حذف المستفيد', bg='#85929E', fg='white')
@@ -188,11 +188,12 @@ class Benifit:
         #------ con + add  الاتصال مع قاعدة البيانات واضافتها  --------
         # انشأنا دالة اسمها (بينفيت) وسط هذه الدالة كتبنا سلف اي تقوم بتمرير البيانات من تلقاء نفسها وانشانا متغير اسمه (كون ) نستطيع تغيير اسمه , داخل هذه اللمتغير استدعينا مكتبة اسمها (باي اس كيو ال ) من هذه المكتبة هناك دالة اسمها كنكت للاتصال مع الهوست اللي هو المضيف
 
-         self.fetch_all()
+        self.fetch_all() # لازم نضيفها عشان تطلع البيانات في البرنامج
     def add_binifit(self): # self = تمرير البيانات من تلقاء نفسها
             con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini') # bini  = database name   binfit = table name  ضرورية للاتصال بقاعدة البيانات
             cur = con.cursor() # للاتصال بقاعدة البيانات
             cur.execute("insert into binfit values(%s,%s,%s,%s,%s,%s,%s,%s)",(
+
 
 
 
@@ -207,18 +208,21 @@ class Benifit:
 
 
 
+
+
                                          ))
             con.commit()
             con.close()
 
     # لاظهار البيانات المضافة في نفس صفحة بالبرنامج
+
     def fetch_all(self):
               con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
               cur = con.cursor()
               # معنى السطر اللي تحت اختر الكل من جدول binfit
               cur.execute('select * from binfit')
               # ننشئ متغير باي اسمه
-              rows = cur.fetch_all() # اجلب كل البيانات
+              rows = cur.fetchall() # اجلب كل البيانات
               if len (rows) !=0:
                   self.benifit_table.delete(*self.benifit_table.get_children())
                   # row = متغير نسميه اي اسمه
@@ -236,11 +240,10 @@ class Benifit:
 
 
 
+
 root = Tk()
 ob = Benifit(root)
 root.mainloop()
-
-
 
 # https://www.youtube.com/watch?v=y2JbutNRSQo
 # ttk used for combobox , entry, label

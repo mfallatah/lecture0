@@ -188,34 +188,44 @@ class Benifit:
         #------ con + add  الاتصال مع قاعدة البيانات واضافتها  --------
         # انشأنا دالة اسمها (بينفيت) وسط هذه الدالة كتبنا سلف اي تقوم بتمرير البيانات من تلقاء نفسها وانشانا متغير اسمه (كون ) نستطيع تغيير اسمه , داخل هذه اللمتغير استدعينا مكتبة اسمها (باي اس كيو ال ) من هذه المكتبة هناك دالة اسمها كنكت للاتصال مع الهوست اللي هو المضيف
 
-
+        self.fetch_all()
     def add_binifit(self): # self = تمرير البيانات من تلقاء نفسها
-            con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
-            cur = con.cursor()
+            con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini') # bini  = database name   binfit = table name  ضرورية للاتصال بقاعدة البيانات
+            cur = con.cursor() # للاتصال بقاعدة البيانات
             cur.execute("insert into binfit values(%s,%s,%s,%s,%s,%s,%s,%s)",(
-                                        self.address_var.get(), 
-                                        self.gender_var.get(),
-                                        self.email_var.get(),
-                                        self.mobile_var.get(),
-                                        self.fname_var.get(),
-                                        self.sname_var.get(),
+
+
+
+                                        self.id_var.get(),
                                         self.name_var.get(),
-                                        self.id_var.get()       
-                                        ))
+                                        self.sname_var.get(),
+                                        self.fname_var.get(),
+                                        self.mobile_var.get(),
+                                        self.email_var.get(),
+                                        self.gender_var.get(),
+                                        self.address_var.get()
+
+
+
+                                         ))
             con.commit()
             con.close()
 
-
-
-                                
-
-
-
-
-
-
-
-
+    # لاظهار البيانات المضافة في نفس صفحة بالبرنامج
+    def fetch_all(self):
+              con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
+              cur = con.cursor()
+              # معنى السطر اللي تحت اختر الكل من جدول binfit
+              cur.execute('select * from binfit')
+              # ننشئ متغير باي اسمه
+              rows = cur.fetch_all() # اجلب كل البيانات
+              if len (rows) !=0:
+                  self.benifit_table.delete(*self.benifit_table.get_children())
+                  # row = متغير نسميه اي اسمه
+                  for row in rows:
+                      self.benifit_table.insert("",END,value=row) # End must be cabital leters
+                  con.commit()
+              con.close()
 
 
 
