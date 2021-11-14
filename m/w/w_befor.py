@@ -104,7 +104,7 @@ class Benifit:
         add_btn = Button(btn_Frame, text='اضافة المستفيد', bg='#85929E', fg='white', command=self.add_binifit)
         add_btn.place(x=33,y=44,width=150,height=30)
 
-        delt_btn = Button(btn_Frame, text='حذف المستفيد', bg='#85929E', fg='white')
+        delt_btn = Button(btn_Frame, text='حذف المستفيد', bg='#85929E', fg='white',command=self.delete)
         delt_btn.place(x=33,y=80,width=150,height=30)
 
         update_btn = Button(btn_Frame, text='تعديل بيانات المستفيد', bg='#85929E', fg='white')
@@ -150,11 +150,12 @@ class Benifit:
         scroll_y = Scrollbar(Details_Frame, orient=VERTICAL)
         # ----- tree View ----------
         self.benifit_table = ttk.Treeview(Details_Frame,
-        columns=('address','gender','email','mobile','fname','ffname','name','id'),
+        columns=('address','gender','email','mobile','fname','sname','name','id'),
         xscrollcommand=scroll_x.set,
         yscrollcommand=scroll_y.set)   # هنا انشانا متغير العنوانجديد وهو متغير داخلي داخل المتغير استدعينا الاداة  Treeview وطلبنا منها تظهر في Details_Frame
         # الحقول  ل Treeview   هي اللي انشأنها لادخال بيانات المستفيدين
-        # xscrollcomand and yscrollcomand = انشأناهم من السطرين  scroll_x = Scrollbar(Details_Frame, orient=HORIZONTAL)
+        # xscrollcomand and yscrollcomand = انشأناهم من السطرين
+        #scroll_x = Scrollbar(Details_Frame, orient=HORIZONTAL)
         #scroll_y = Scrollbar(Details_Frame, orient=VERTICAL)
         self.benifit_table.place(x=18,y=1, width=1130,height=587) # 18-1134 = 1119
         scroll_x.pack(side=BOTTOM,fill=X)
@@ -169,18 +170,20 @@ class Benifit:
         self.benifit_table.heading('email', text='البريد الالكتروني')
         self.benifit_table.heading('mobile', text='رقم الجوال')
         self.benifit_table.heading('fname', text='اللقب')
-        self.benifit_table.heading('ffname', text='اسم الأب')
+        self.benifit_table.heading('sname', text='اسم الأب')
         self.benifit_table.heading('name', text='اسم المستفيد')
         self.benifit_table.heading('id', text='رقم الهوية')
+
         # التحكم بحجم الاسكرول عشان لايظهر الشريط
+        self.benifit_table.column('id',width=65)
         self.benifit_table.column('address', width=130)
         self.benifit_table.column('gender',width=30)
         self.benifit_table.column('email',width=70)
         self.benifit_table.column('mobile',width=65)
         self.benifit_table.column('fname',width=30)
-        self.benifit_table.column('ffname',width=30)
+        self.benifit_table.column('sname',width=30)
         self.benifit_table.column('name',width=30)
-        self.benifit_table.column('id',width=65)
+
 
 
 
@@ -188,7 +191,7 @@ class Benifit:
         #------ con + add  الاتصال مع قاعدة البيانات واضافتها  --------
         # انشأنا دالة اسمها (بينفيت) وسط هذه الدالة كتبنا سلف اي تقوم بتمرير البيانات من تلقاء نفسها وانشانا متغير اسمه (كون ) نستطيع تغيير اسمه , داخل هذه اللمتغير استدعينا مكتبة اسمها (باي اس كيو ال ) من هذه المكتبة هناك دالة اسمها كنكت للاتصال مع الهوست اللي هو المضيف
 
-        self.fetch_all() # لازم نضيفها عشان تطلع البيانات في البرنامج
+        self.fetch_all() # لازم نضيفها عشان تطلع البيانات في البرنامج وتمت اضافتها بعد اضافة قواعد البيانات
     def add_binifit(self): # self = تمرير البيانات من تلقاء نفسها
             con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini') # bini  = database name   binfit = table name  ضرورية للاتصال بقاعدة البيانات
             cur = con.cursor() # للاتصال بقاعدة البيانات
@@ -197,14 +200,14 @@ class Benifit:
 
 
 
-                                        self.id_var.get(),
-                                        self.name_var.get(),
-                                        self.sname_var.get(),
-                                        self.fname_var.get(),
-                                        self.mobile_var.get(),
-                                        self.email_var.get(),
-                                        self.gender_var.get(),
-                                        self.address_var.get()
+                                                      self.address_var.get(),
+                                                      self.gender_var.get(),
+                                                      self.email_var.get(),
+                                                      self.mobile_var.get(),
+                                                      self.fname_var.get(),
+                                                      self.sname_var.get(),
+                                                      self.name_var.get(),
+                                                      self.id_var.get()
 
 
 
@@ -212,6 +215,7 @@ class Benifit:
 
                                          ))
             con.commit()
+            self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات
             con.close()
 
     # لاظهار البيانات المضافة في نفس صفحة بالبرنامج
@@ -228,8 +232,21 @@ class Benifit:
                   # row = متغير نسميه اي اسمه
                   for row in rows:
                       self.benifit_table.insert("",END,value=row) # End must be cabital leters
+                      # END معناها اعرض كل البيانات اللي ااضيفها في الهاية
                   con.commit()
               con.close()
+
+    # ننشْ دالة لحذف المستفيد
+    def delete(self):
+        con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
+        cur = con.cursor()
+        cur.execute('delete from binfit where name=%s',self.dell_var.get())
+        con.commit()
+        self.fetch_all() # لما المستخدم يحذف ينحذف من البرنامج مباشرة مو لازم يغلق بالبرنامج
+        con.close()
+
+
+
 
 
 
@@ -244,7 +261,3 @@ class Benifit:
 root = Tk()
 ob = Benifit(root)
 root.mainloop()
-
-# https://www.youtube.com/watch?v=y2JbutNRSQo
-# ttk used for combobox , entry, label
-# https://www.youtube.com/watch?v=4ygq2fJa4ig
