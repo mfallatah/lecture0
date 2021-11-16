@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import pymysql
+from tkinter import messagebox
 
 class Benifit:
     # انشاء نافذة البرنامج
@@ -25,6 +26,7 @@ class Benifit:
         self.gender_var=StringVar()
         self.address_var=StringVar()
         self.se_var=StringVar() # حق البحث
+        self.se_by=StringVar()
         self.dell_var=StringVar() #
 
 
@@ -107,16 +109,16 @@ class Benifit:
         delt_btn = Button(btn_Frame, text='حذف المستفيد', bg='#85929E', fg='white',command=self.delete)
         delt_btn.place(x=33,y=80,width=150,height=30)
 
-        update_btn = Button(btn_Frame, text='تعديل بيانات المستفيد', bg='#85929E', fg='white')
+        update_btn = Button(btn_Frame, text='تعديل بيانات المستفيد', bg='#85929E', fg='white', command=self.update)
         update_btn.place(x=33,y=115,width=150,height=30)
 
-        clear_btn = Button(btn_Frame, text='افراغ الحقول', bg='#85929E', fg='white')
+        clear_btn = Button(btn_Frame, text='افراغ الحقول', bg='#85929E', fg='white',command=self.clear)
         clear_btn.place(x=33,y=150,width=150,height=30)
 
-        about_btn = Button(btn_Frame, text='المطور', bg='#85929E', fg='white')
+        about_btn = Button(btn_Frame, text='المطور', bg='#85929E', fg='white',command=self.about)
         about_btn.place(x=33,y=185,width=150,height=30)
 
-        exit_btn = Button(btn_Frame, text='اغلاق البرنامج', bg='#85929E', fg='white')
+        exit_btn = Button(btn_Frame, text='اغلاق البرنامج', bg='#85929E', fg='white', command=root.qui)
         exit_btn.place(x=33,y=220,width=150,height=30)
 
 
@@ -135,7 +137,7 @@ class Benifit:
         search_entry = Entry(search_Frame, textvariable=self.se_var, justify='right', bd=2)
         search_entry.place(x=740,y=13)
 
-        se_btn = Button(search_Frame, text='بحث',bg='#3498DB', fg='white')
+        se_btn = Button(search_Frame, text='بحث',bg='#3498DB', fg='white', command=self.search)
         se_btn.place(x=630,y=12,width=100, height=25)
 
 
@@ -175,7 +177,7 @@ class Benifit:
         self.benifit_table.heading('id', text='رقم الهوية')
 
         # التحكم بحجم الاسكرول عشان لايظهر الشريط
-        self.benifit_table.column('id',width=65)
+
         self.benifit_table.column('address', width=130)
         self.benifit_table.column('gender',width=30)
         self.benifit_table.column('email',width=70)
@@ -183,6 +185,9 @@ class Benifit:
         self.benifit_table.column('fname',width=30)
         self.benifit_table.column('sname',width=30)
         self.benifit_table.column('name',width=30)
+        self.benifit_table.column('id',width=65)
+        self.benifit_table.bind("<ButtonRelease-1>",self.get_cursor)
+
 
 
 
@@ -215,7 +220,8 @@ class Benifit:
 
                                          ))
             con.commit()
-            self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات
+            self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
+            self.clear() # تفرغ الحقول بعد اضافة المستفيد
             con.close()
 
     # لاظهار البيانات المضافة في نفس صفحة بالبرنامج
@@ -246,18 +252,94 @@ class Benifit:
         con.close()
 
 
+    # دالة افراغ الحقول
+    def clear(self): # لازم نضيف اسم الدالة في امر الزر عشان تتنفذ
+        self.id_var.set('')
+        self.name_var.set('')
+        self.sname_var.set('')
+        self.fname_var.set('')
+        self.mobile_var.set('')
+        self.email_var.set('')
+        self.gender_var.set('')
+        self.address_var.set('')
+
+    # دالة بمجرد ان اضغط على بيانات اي مستفيد يعرض بياناته في الحقول  13
+    def get_cursor(self,ev):
+        cursor_row=self.benifit_table.focus() # انشأنا متغير بهذا الاسم واستتدعيناها في منطقة تري فيو فوكس معناها لما انقر على هذه البيانات
+        contents = self.benifit_table.item(cursor_row) #لا واحفظها داخل المتغير كونتنتس زايتمز العناصر اللي حددها الفوكس
+        row=contents['values'] # هما انشأنا متغير اسمه رو لما المستخد ضغط على البيانات تم حفظها داخل كورسور_رو والكورسور موجود داخل الكونتنت ومهمة الرو جلب القيم في الكونتنت
+        self.id_var.set(row[7]) # حسب الرقم التسلسلي في قاعدة البيانات ولما تكون بالعربي نعكسها عشان تطلع صحيحة
+        self.name_var.set(row[6]) # أنشأنا متغير اسمه رو مهمته معناها يارو تاخذ القيمة اللي في الحقل 7 وتحطها في نيم _فار
+        self.sname_var.set(row[5])
+        self.fname_var.set(row[4])
+        self.mobile_var.set(row[3])
+        self.email_var.set(row[2])
+        self.gender_var.set(row[1])
+        self.address_var.set(row[0])
+
+
+
+    # تعديل بيانات المستفيد من نفس الحقول بعد مانضغط على اسمه في شاشة عرض البيانات
+    # نسخنا نفس دالة الاتصال بقواعد البيانات الخاصة باضافة مستفيد
+    # اتصلنا بقاعدة بيانات السيرفر وقلنا له سوف نري عملية وهي تحديث بيانات المستفيدين التي ساكتبها في الحقول حسب الاي دي
+    def update(self):
+        con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini') # bini  = database name   binfit = table name  ضرورية للاتصال بقاعدة البيانات
+        cur = con.cursor() # للاتصال بقاعدة البيانات
+        cur.execute("update binfit set address=%s, gender=%s, email=%s, mobile=%s, fname=%s, sname=%s, name=%s where id=%s",(
+
+
+
+
+                                                      self.address_var.get(),
+                                                      self.gender_var.get(),
+                                                      self.email_var.get(),
+                                                      self.mobile_var.get(),
+                                                      self.fname_var.get(),
+                                                      self.sname_var.get(),
+                                                      self.name_var.get(),
+                                                      self.id_var.get()
 
 
 
 
 
+                                         ))
+        con.commit()
+        self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
+        self.clear() # تفرغ الحقول بعد اضافة المستفيد
+        con.close()
 
 
 
 
+    def search(self): # نسخنا دالة fttch all
+            con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
+            cur = con.cursor()
+            # معنى السطر اللي تحت اختر الكل من جدول binfit
+            cur.execute("select * from binfit where " +
+            str(self.se_by.get()) +" LIKE '%"+str(self.se_var.get())+"%'")
+
+            # ننشئ متغير باي اسمه
+            rows = cur.fetchall() # اجلب كل البيانات
+            if len (rows) !=0:
+                  self.benifit_table.delete(*self.benifit_table.get_children())
+            # row = متغير نسميه اي اسمه
+                  for row in rows:
+                      self.benifit_table.insert("",END,value=row) # End must be cabital leters
+            # END معناها اعرض كل البيانات اللي ااضيفها في الهاية
+                  con.commit()
+            con.close()
+
+
+    def about(self):
+        messagebox.showinfo("Developed By Mohammed Fallaatah","برنامج ادارة المستفيدين")
 
 
 
 root = Tk()
 ob = Benifit(root)
 root.mainloop()
+
+# https://www.youtube.com/watch?v=y2JbutNRSQo
+# ttk used for combobox , entry, label
+# https://www.youtube.com/watch?v=4ygq2fJa4ig
