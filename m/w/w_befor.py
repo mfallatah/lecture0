@@ -25,7 +25,7 @@ class Benifit:
         self.email_var=StringVar()
         self.gender_var=StringVar()
         self.address_var=StringVar()
-        self.se_var=StringVar() # حق البحث
+        self.se_txt=StringVar() # حق البحث
         self.se_by=StringVar()
         self.dell_var=StringVar() #
 
@@ -118,7 +118,7 @@ class Benifit:
         about_btn = Button(btn_Frame, text='المطور', bg='#85929E', fg='white',command=self.about)
         about_btn.place(x=33,y=185,width=150,height=30)
 
-        exit_btn = Button(btn_Frame, text='اغلاق البرنامج', bg='#85929E', fg='white', command=root.qui)
+        exit_btn = Button(btn_Frame, text='اغلاق البرنامج', bg='#85929E', fg='white', command=root.quit)
         exit_btn.place(x=33,y=220,width=150,height=30)
 
 
@@ -130,11 +130,11 @@ class Benifit:
         lbl_searsh = Label(search_Frame, text='البحث عن مستفيد', bg='white')
         lbl_searsh.place(x=1034,y=12)
 
-        combo_search = ttk.Combobox(search_Frame, justify='right')
-        combo_search['value']=('رقم الهوية','اسم المستفيد','اللقب','رقم الجوال','البريدالالكتروني')
+        combo_search = ttk.Combobox(search_Frame, justify='right',textvariable=self.se_by)
+        combo_search['value']=("id","name","mobile","email")
         combo_search.place(x=880,y=12)
 
-        search_entry = Entry(search_Frame, textvariable=self.se_var, justify='right', bd=2)
+        search_entry = Entry(search_Frame, textvariable=self.se_txt, justify='right', bd=2)
         search_entry.place(x=740,y=13)
 
         se_btn = Button(search_Frame, text='بحث',bg='#3498DB', fg='white', command=self.search)
@@ -196,7 +196,7 @@ class Benifit:
         #------ con + add  الاتصال مع قاعدة البيانات واضافتها  --------
         # انشأنا دالة اسمها (بينفيت) وسط هذه الدالة كتبنا سلف اي تقوم بتمرير البيانات من تلقاء نفسها وانشانا متغير اسمه (كون ) نستطيع تغيير اسمه , داخل هذه اللمتغير استدعينا مكتبة اسمها (باي اس كيو ال ) من هذه المكتبة هناك دالة اسمها كنكت للاتصال مع الهوست اللي هو المضيف
 
-        self.fetch_all() # لازم نضيفها عشان تطلع البيانات في البرنامج وتمت اضافتها بعد اضافة قواعد البيانات
+        self.fetch_data() # لازم نضيفها عشان تطلع البيانات في البرنامج وتمت اضافتها بعد اضافة قواعد البيانات
     def add_binifit(self): # self = تمرير البيانات من تلقاء نفسها
             con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini') # bini  = database name   binfit = table name  ضرورية للاتصال بقاعدة البيانات
             cur = con.cursor() # للاتصال بقاعدة البيانات
@@ -220,13 +220,13 @@ class Benifit:
 
                                          ))
             con.commit()
-            self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
+            self.fetch_data() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
             self.clear() # تفرغ الحقول بعد اضافة المستفيد
             con.close()
 
     # لاظهار البيانات المضافة في نفس صفحة بالبرنامج
 
-    def fetch_all(self):
+    def fetch_data(self):
               con = pymysql.connect(host = 'localhost',user = 'root',password = '',database = 'bini')
               cur = con.cursor()
               # معنى السطر اللي تحت اختر الكل من جدول binfit
@@ -237,7 +237,7 @@ class Benifit:
                   self.benifit_table.delete(*self.benifit_table.get_children())
                   # row = متغير نسميه اي اسمه
                   for row in rows:
-                      self.benifit_table.insert("",END,value=row) # End must be cabital leters
+                      self.benifit_table.insert("",END,values=row) # End must be cabital leters
                       # END معناها اعرض كل البيانات اللي ااضيفها في الهاية
                   con.commit()
               con.close()
@@ -248,7 +248,7 @@ class Benifit:
         cur = con.cursor()
         cur.execute('delete from binfit where name=%s',self.dell_var.get())
         con.commit()
-        self.fetch_all() # لما المستخدم يحذف ينحذف من البرنامج مباشرة مو لازم يغلق بالبرنامج
+        self.fetch_data() # لما المستخدم يحذف ينحذف من البرنامج مباشرة مو لازم يغلق بالبرنامج
         con.close()
 
 
@@ -305,7 +305,7 @@ class Benifit:
 
                                          ))
         con.commit()
-        self.fetch_all() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
+        self.fetch_data() # لما تضيف طالب جديد اعرض بيانته قبل اغلاق الاتصال مع قاعدة البيانات في تري فيو
         self.clear() # تفرغ الحقول بعد اضافة المستفيد
         con.close()
 
@@ -317,7 +317,7 @@ class Benifit:
             cur = con.cursor()
             # معنى السطر اللي تحت اختر الكل من جدول binfit
             cur.execute("select * from binfit where " +
-            str(self.se_by.get()) +" LIKE '%"+str(self.se_var.get())+"%'")
+            str(self.se_by.get()) +" LIKE '%"+str(self.se_txt.get())+"%'")
 
             # ننشئ متغير باي اسمه
             rows = cur.fetchall() # اجلب كل البيانات
@@ -325,7 +325,7 @@ class Benifit:
                   self.benifit_table.delete(*self.benifit_table.get_children())
             # row = متغير نسميه اي اسمه
                   for row in rows:
-                      self.benifit_table.insert("",END,value=row) # End must be cabital leters
+                      self.benifit_table.insert("",END,values=row) # End must be cabital leters
             # END معناها اعرض كل البيانات اللي ااضيفها في الهاية
                   con.commit()
             con.close()
