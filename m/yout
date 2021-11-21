@@ -1,2 +1,41 @@
 https://www.youtube.com/watch?v=O25Q0ko0WOk
 https://www.youtube.com/watch?v=SOkJwC-3Cww
+https://www.youtube.com/watch?v=YTqDYmfccQU
+
+
+
+
+from tkinter import *
+from tkinter import ttk
+
+root = Tk()
+root.title('add')
+root.geometry('500x500')
+
+# Create tree
+my_tree = ttk.Treeview()
+
+
+
+# تعريف العامود اللي حايعرض البيانات 
+my_tree['columns'] =('Name','Id', 'Address')
+
+#Format our columns
+my_tree.column("#0", width=120, minwidth=25)
+my_tree.column("Name",anchor=W, width=120)
+my_tree.column("ID",anchor=CENTER, width=80)
+my_tree.column("Address",anchor=W, width=120)
+
+# Create headings
+# الشريط اللي في الاعلى اللي تظهر فيه عنواين التي فيو 
+my_tree.heading("#0", text='Label', anchor=W)
+my_tree.heading('Name', text='Name',anchor=W)
+my_tree.heading('Id', text='ID', anchor=CENTER)
+my_tree.heading('Address', text="Adress", anchor=W)
+
+
+# Add DAta
+ 
+
+
+root.mainloop()
