@@ -16,20 +16,32 @@ class Binifit:
         title.pack(fill=X)
 
 
+        
+
+
         Data_frame = Frame(self.root, bg='white')
-        Data_frame.place(x=1240,y=35,width=255,height=555)
+        Data_frame.place(x=1200,y=35,width=295,height=555)
+
+        title =Label(Data_frame, text="ادخال بيانات المستفيد",bg='#1AAECB',font=('monospace',14), fg ='red')
+        title.pack(fill=X)
 
 
 
         manage_frame = Frame(self.root, bg='white')
-        manage_frame.place(x=1240,y=595,width=255,height=300)
+        manage_frame.place(x=1200,y=595,width=255,height=300)
+
+
+        tree_v1 = Frame(self.root, bg='white')
+        tree_v1.place(x=935, y=100 ,width=250, height=700)
+
+        
 
 
 
 
 
         search_frame = Frame(self.root, bg = 'white')
-        search_frame.place(x=5,y=35,width=1228,height=100)
+        search_frame.place(x=5,y=35,width=1180,height=50)
 
 
 
@@ -37,4 +49,3 @@ class Binifit:
 root = Tk()
 ob = Binifit(root)
 root.mainloop()
-
