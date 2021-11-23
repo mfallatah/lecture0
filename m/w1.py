@@ -215,6 +215,19 @@ class Binifit:
         scroll_y.pack(side=LEFT,fill=Y)
         scroll_x.config(command=self.binifit_tabel.xview) # اذا ماظهر الاسكورول بالكود اللي فوق نكتب هذي السطرين بدالهم
         scroll_y.config(command=self.binifit_tabel.yview)
+        
+        
+        self.binifit_tabel['show']='headings'
+        self.binifit_tabel.heading('filen', text='رقم الملف')
+        self.binifit_tabel.heading('name', text='الاسم')
+        self.binifit_tabel.heading('sname', text='اسم الاب')
+        self.binifit_tabel.heading('fname', text='اللقب')
+
+
+
+        # التحكم بحجم الاسكرول عشان لايظهر الشريط
+
+        self.binifit_tabel.column('filen', width=60)
 
          
         
@@ -248,3 +261,35 @@ class Binifit:
 root = Tk()
 ob = Binifit(root)
 root.mainloop()
+
+
+
+
+""""
+        l_nat = Label(Data_frame, bg='white', text=' الجنــــسية',font=('monospace',13))
+        l_nat.place(x=190,y=210)
+        r_ns= Radiobutton(Data_frame,text='سعودي',bg='white',value=1)
+        r_ns.place(x=125,y=210)
+
+        r_nn= Radiobutton(Data_frame,text='غير سعودي', bg='white',value=2)
+        r_nn.place(x=50,y=210)
+        
+        ---------------------------------------------------------
+        v = IntVar() # عشان يشيل الاختيار عن اخيارين ويخلينا احنا نختار
+
+        rdom= Radiobutton(frm,text='Male',value=1,variable=v)
+        rdom.pack()
+
+        rdof= Radiobutton(frm,text='Fmale',value=2,variable=v)
+        rdof.pack()
+
+        # اذا ما حطينا كلمة فاليو الاختيار يكون على الاثنين
+        # نسوي الدالة والزر اللي ترجع القيمة
+        def f ():
+        print (v.get())
+    
+        Button(frm,text='OK',command=f).pack()
+
+"""
+
+# https://www.pythontutorial.net/tkinter/tkinter-treeview/
