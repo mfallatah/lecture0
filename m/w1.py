@@ -206,7 +206,7 @@ class Binifit:
         scroll_y = Scrollbar(tree_v1, orient=VERTICAL)
 
         self.binifit_tabel= ttk.Treeview(tree_v1,
-        columns=('t20','t19','t18','t17','t16','t15','t14','t13','t12','t11','t10','t8','t9','t8','t7','t6','t5','t4','t3','t2','t1','gender','nationality','acountn','mobile','iddate','idnum','name','fname','sname','name','filen'),
+        columns=('t20','t19','t18','gender','nationality','acountn','mobile','iddate','idnumber','fname','sname','name','filen'),
                  xscrollcommand=scroll_x.set,
                  yscrollcommand=scroll_y.set)
 
@@ -222,12 +222,32 @@ class Binifit:
         self.binifit_tabel.heading('name', text='الاسم')
         self.binifit_tabel.heading('sname', text='اسم الاب')
         self.binifit_tabel.heading('fname', text='اللقب')
+        self.binifit_tabel.heading('idnumber', text='رقم الهوية')
+        self.binifit_tabel.heading('iddate', text='تاريخ انتهائها')
+        self.binifit_tabel.heading('mobile', text='الجوال')
+        self.binifit_tabel.heading('acountn', text='رقم الحساب')
+        self.binifit_tabel.heading('nationality', text='الجنسية')
+        self.binifit_tabel.heading('gender', text='الجنس')
+        self.binifit_tabel.heading('fname', text='اللقب')
+        self.binifit_tabel.heading('fname', text='اللقب')
+        self.binifit_tabel.heading('fname', text='اللقب')
+        self.binifit_tabel.heading('fname', text='اللقب')
 
 
 
-        # التحكم بحجم الاسكرول عشان لايظهر الشريط
+        #التحكم بحجم الاسكرول عشان لايظهر الشريط
 
         self.binifit_tabel.column('filen', width=60)
+        self.binifit_tabel.column('name', width=60)
+        self.binifit_tabel.column('sname', width=60)
+        self.binifit_tabel.column('fname', width=60)
+        self.binifit_tabel.column('idnumber', width=60)
+        self.binifit_tabel.column('iddate', width=70)
+        self.binifit_tabel.column('mobile', width=60)
+        self.binifit_tabel.column('acountn', width=70)
+        self.binifit_tabel.column('nationality', width=60)
+        self.binifit_tabel.column('gender', width=60)
+      
 
          
         
@@ -270,26 +290,21 @@ root.mainloop()
         l_nat.place(x=190,y=210)
         r_ns= Radiobutton(Data_frame,text='سعودي',bg='white',value=1)
         r_ns.place(x=125,y=210)
-
         r_nn= Radiobutton(Data_frame,text='غير سعودي', bg='white',value=2)
         r_nn.place(x=50,y=210)
         
         ---------------------------------------------------------
         v = IntVar() # عشان يشيل الاختيار عن اخيارين ويخلينا احنا نختار
-
         rdom= Radiobutton(frm,text='Male',value=1,variable=v)
         rdom.pack()
-
         rdof= Radiobutton(frm,text='Fmale',value=2,variable=v)
         rdof.pack()
-
         # اذا ما حطينا كلمة فاليو الاختيار يكون على الاثنين
         # نسوي الدالة والزر اللي ترجع القيمة
         def f ():
         print (v.get())
     
         Button(frm,text='OK',command=f).pack()
-
 """
 
 # https://www.pythontutorial.net/tkinter/tkinter-treeview/
