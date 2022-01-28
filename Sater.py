@@ -1,3 +1,4 @@
+
 name = 'Mohammed'
 age = 38
 is_employee = True
@@ -25,3 +26,47 @@ print(type(chiled_tow))
 print(chiled_tow['name']) # نوصل للعنصر عن طريق المفتاح
 print(chiled_tow.values())# To print all values in dictionary
 print(chiled_tow.keys())# Toprint all keys in dictionary
+
+
+# if , elif  and else : if we change the value of path result well be chnge
+path = ''
+if path =='ios':
+    print("Swift")
+elif path == 'Web Development':
+    print('javaScript')
+elif path == 'Android':
+    print('hotlin')
+else:
+    print('Some thing else')
+
+
+# Loop
+i = 1
+while i <= 5:
+    print(i)
+    i +=1
+
+# For loop with Range
+for n in range(10):
+    print(n)
+
+# FUNCTIONS
+fname= input("Enter Your name:")
+ftime= input('Enter the time of the day:')
+print("Good "+ftime+","+fname+"!")
+
+
+# Function parameter
+def print_number(to):
+    for i in range(to):
+        print(i)
+print_number(2)
+print_number(3)
+print_number(5)
+
+# EXxample 3  we can add any number of parameter , passes more thhan parameter trough the function
+def add(first_num, seconed_num):
+    print(first_num + seconed_num)
+add(3, 3)
+
+
