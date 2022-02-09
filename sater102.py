@@ -82,3 +82,23 @@ print(the_tuple1.index(6))
 
 # len function
 print(len(text1))
+
+# count function
+# عشان نعرف العنصر كم كرة اتكرر في القائمة او الحرف كم مرة تكرر
+sstring = 'This si studend sozan'
+llist = [1, 2, 3, 3, 3, 3]
+ttpule = (1, 1, 1, 1, 4, 4, 4)
+print(sstring.count('s'))
+print(llist.count(3))
+print(ttpule.count(4))
+
+# in function return thru or false
+# البحث عن ننصر معين في تسلسل معين
+ttxet = (' welcome to python world ')
+print('to' in ttxet)
+
+# الدمج والتكرار
+fname = 'Mohammed'
+sname =  'Fallatah'
+print(fname + sname) #بدون مسافة بين الاسمين
+print(fname + '' + sname) # بوجود مسافة بين الاسمين
