@@ -1,4 +1,3 @@
-
 number = -999
 print(abs(number)) # To print abslute value
 
@@ -101,4 +100,35 @@ print('to' in ttxet)
 fname = 'Mohammed'
 sname =  'Fallatah'
 print(fname + sname) #بدون مسافة بين الاسمين
-print(fname + '' + sname) # بوجود مسافة بين الاسمين
+print(fname + ' ' + sname) # بوجود مسافة بين الاسمين
+
+# RePLACE
+vva ='1\n2\n3\n4\n5\n6'
+print(vva)
+print(vva.replace('\n',','))
+
+#STRIP
+#  لللتخلص من المسافات الزائدة في بداية ونهاية الجملة
+txxt ='     python course     '
+print(txxt)
+print(txxt.strip()) # without space   lstrip delete space befor rstrip delete space after
+
+
+
+str = 'This is python Course'
+print(str.lower()) # make all letters small
+print(str.upper()) # make all letters capital
+print(str.swapcase())# chnge capital letters to small and oposit
+print(str.title())# convert first letter in each word to capital
+
+
+# Format function
+
+names = 'mohammed'
+family = 'fallatah'
+agee = 38
+print('My Name is {} {}, and I am {} years old..format'.format(names, family, agee))
+
+
+txtt = "My name is {1}, and I'm {0} years old".format(30, 'Reem')
+print(txtt)
