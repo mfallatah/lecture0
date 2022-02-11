@@ -132,3 +132,21 @@ print('My Name is {} {}, and I am {} years old..format'.format(names, family, ag
 
 txtt = "My name is {1}, and I'm {0} years old".format(30, 'Reem')
 print(txtt)
+
+
+# الدالة فلتر يمكن اختصار اللوب اللي سوناه في القسم الاول بالكود في القسم الثاني
+# الدالة فلتر تستتقبل مدخلين الاول يحتوي لى شرط معين والثاني  قائمة
+#ages = [30, 9, 15, 32, 17, 44, 26, 5]
+adult = []
+#def filtered_ages(ages):
+#    for age in ages:
+#        if age >= 18:
+#            adult.append(age)
+#   return adult
+#print(filtered_ages(ages))
+# نمرر الدالة ثم القائمة
+
+ages = [30, 9, 15, 32, 17, 44, 26, 5]
+def filtered_ages(age):
+    return age >=18
+print(list(filter(filtered_ages, ages))) # نمرر الدالة ثم القائمة  والدالة فلتر راه تقوم بتمرير عنصر واحد واختباره اذا اجتاز الشرط راح تاخذه واذا ما اجتازه تتجاهله
