@@ -182,4 +182,17 @@ print(list1)
 print(list2)
 
 
+'''
+# List Comprehension
+# انشاء قائمة  على قائمة موجودة مسبقا  تخت شروط معينة
+lst =[1,2,3,4,5]
+multiplied_list = []
+for num in lst:
+    if (num > 3 ) and num % 5 == 0:
+        multiplied_list.append(num*2)
+print(multiplied_list)
+'''
 
+lst =[1,2,3,4,5]
+multiplied_list = [num*2 for num in lst if num > 3 and num % 5 == 0] # اختصرنا الاسطر البرمجية في العلى بهذه السطرين
+print(multiplied_list)
