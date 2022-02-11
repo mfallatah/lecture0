@@ -170,3 +170,16 @@ numbers = [5,10,20,25,50]
 def square(num):
     return num ** 2
 print(list(map(square,numbers)))
+
+
+# sort
+#الدالة سورت تقوم بترتيب االقوئم تصاعديا او تنازليا
+list1 =['mohammed','ahmed', 'khaled']
+list2 =[3,5,7,9]
+list1.sort() # الترتيب يكون تصاعدي وابجدي
+list2.sort(reverse=True) # مابين القوسين يجعل الترتيب تنازلي
+print(list1)
+print(list2)
+
+
+
