@@ -150,3 +150,23 @@ ages = [30, 9, 15, 32, 17, 44, 26, 5]
 def filtered_ages(age):
     return age >=18
 print(list(filter(filtered_ages, ages))) # نمرر الدالة ثم القائمة  والدالة فلتر راه تقوم بتمرير عنصر واحد واختباره اذا اجتاز الشرط راح تاخذه واذا ما اجتازه تتجاهله
+
+
+# map
+# الدالة ماب  تستقبل دالة وقائمة وتقود الدالة بالمرور على الائمة عنصر عنر  وتطبيق الدالة المررة على هذه العناصروراخ ترجعلنا قائمة جديدة بالقيم الجديدة بعد تطبيق الدالة الممرة عليها
+# List[m,n,p] function,f() ===> if (m==condition)===> New list [f(m),f(n),f(p)]
+'''
+numbers = [5,10,20,25,50]
+sq_numbers =[] # هنا تحفظ القيم الجديدة
+
+def square(numbers):
+    for num in numbers:
+        sq_numbers.append(num**2) # عشان نرفعها للاس 2
+    return sq_numbers
+print(square(numbers))
+'''
+
+numbers = [5,10,20,25,50]
+def square(num):
+    return num ** 2
+print(list(map(square,numbers)))
