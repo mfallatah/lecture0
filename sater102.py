@@ -196,3 +196,13 @@ print(multiplied_list)
 lst =[1,2,3,4,5]
 multiplied_list = [num*2 for num in lst if num > 3 and num % 5 == 0] # اختصرنا الاسطر البرمجية في العلى بهذه السطرين
 print(multiplied_list)
+
+
+# positional arguments
+#number of argument must be equal to number of parameter
+# لازم عدد المدخلات يساوي عدد المخرجات 
+def info(name, age):
+    print('My name is',name, 'and I am', age , 'years old')
+info('Mohammed', 30)
+
+
