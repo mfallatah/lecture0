@@ -211,3 +211,14 @@ info('Mohammed', 30)
 def info(name ='Mohammed', age =30, course='python'):
     print('My name is '+name+', I am', age , 'years old and I am taking '+course+' course.')
 info('MOHAMMED FALLATAH',30, 'JAVA SCRIPT') # لو ماحطينا شي وسبنا بين القوسين فاضي راح يطبع اللي فوق في تعريف الدلة
+
+
+
+#Argument Packing
+#استقبال عدد غير محدود من الارقومنت ووضعها في باراميتر واحدعلى شكل تبل
+def avg(*args):# نعطيه اي اسم لكن عند المبرمجين هذا المتداول
+    total = sum(args)
+    leng = len(args)
+    average = total / leng
+    print(average)
+avg(2,8,16)
