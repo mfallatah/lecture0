@@ -230,3 +230,16 @@ def my_fun(*items):
 items =['a', 'b', 'c']
 my_fun(items)# HERE HE TAKE THE LIST AS IT IS and this is packing
 my_fun(*items) # this unpacking heprint each item alone not in list
+
+# Argument Dictonary Packing
+# استقبال  keyword  في  parameter  على شكل Dictonary
+# لتطبيق  Argument  Dictunary Packing  يتم استخدام العلامة **
+# الاسم في  keyword Argument  يقابله اسم  key   في  Dictonary
+# القيمة في key Argument  يقابلها القيمة  Value  في  Dictunary
+def info(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+
+info(name='Mohammed', age=30)
+
+
