@@ -222,3 +222,11 @@ def avg(*args):# نعطيه اي اسم لكن عند المبرمجين هذا 
     average = total / leng
     print(average)
 avg(2,8,16)
+
+
+# نستخدم packing and unpacking  في نفس الوقت الاول يستقبل مجموعة من المدخلات تحت اسم مدخل واح وراح يجمعهم كلهم في  tuple  واحد
+def my_fun(*items):
+    print(items)
+items =['a', 'b', 'c']
+my_fun(items)# HERE HE TAKE THE LIST AS IT IS and this is packing
+my_fun(*items) # this unpacking heprint each item alone not in list
