@@ -206,3 +206,8 @@ def info(name, age):
 info('Mohammed', 30)
 
 
+
+# defult Argument  اذا ما اعطيناه قيمة البارميتر يطبع اللي حاطينه في تعريف الدالة بشكل مباشر
+def info(name ='Mohammed', age =30, course='python'):
+    print('My name is '+name+', I am', age , 'years old and I am taking '+course+' course.')
+info('MOHAMMED FALLATAH',30, 'JAVA SCRIPT') # لو ماحطينا شي وسبنا بين القوسين فاضي راح يطبع اللي فوق في تعريف الدلة
