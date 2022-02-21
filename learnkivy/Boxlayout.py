@@ -20,3 +20,26 @@ BoxLayout:    # يمننا انشاء العديد من الادوات داخل�
         text: "FALLATAH"
 
 '''
+
+
+'''
+BoxLayout:    # يمكننا انشاء العديد من الادوات داخله
+    orientation: 'vertical' 
+    BoxLayout:
+        TextInput:
+        TextInput:
+    Button:
+        text:'HOME'
+        size_hint_x:1 # 1 ياخذ عرض الشاشة كامل وهي اكبر قيمة
+    Button:
+        text:'BACK'
+        size_hint_x:0.3
+    BoxLayout:# هنا حولنا من عامودي الى افقي
+        orientation:'horizontal'
+        Label:
+            text:'LERN KIVY'
+        Label:
+            text: 'APPLICATION'
+        Label:
+            text: '2022'
+ '''
