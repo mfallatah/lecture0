@@ -3,9 +3,13 @@
 # GridLatout: للتقسيم لاسطر وصفوف
 # multiline = يمنع من النزول الى السطر التالي عند الضغط على انتر
 # password: True = يحول كلمة السر الة نجمية
+# on_release: = عند النقر
+# app.root.current ='seconed' if Passw.text == '123456' else 'main' اذا كلمة السر نفس  اللي كتبناها في دا السطر انتقل للصفحة الثانية او ابقى
+# root.manager.transition.direction ='up' اضافة يخلي الانتقال للصفحة التالية نحو الاعلى 
 WindowManager:
     MainWindow:
     SeconedWindow:
+    Error:
 <MainWindow>:
     name: 'main'
     GridLayout:
@@ -29,4 +33,63 @@ WindowManager:
         Button:
             text: 'LOGIN'
             size_hint:(0.1,0.1)
+            on_release:
+                app.root.current ='seconed' if Passw.text == '123456' else 'error'
+                root.manager.transition.direction ='up'
+
+<SeconedWindow>:
+    name: 'seconed'
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:2
+            Image:
+                source:'img/error.jpg'
+            Label:
+                text: 'WELCOME PAGE'
+        GridLayout:
+            cols:2
+            rows:3
+            Button:
+                text: 'python'
+                size_hint:(0.1,0.1)
+            Button:
+                text: 'PHP'
+                size_hint:(0.1,0.1)
+            Button:
+                text: 'JAVA'
+                size_hint:(0.1,0.1)
+            Button:
+                text: 'VISUAL'
+                size_hint:(0.1,0.1)
+            Button:
+                text: 'SWIFT'
+                size_hint:(0.1,0.1)
+            Button:
+                text: 'SQL'
+                size_hint:(0.1,0.1)
+
+
+        Button:
+            text: 'BACk'
+            size_hint:(0.1,0.3)
+            on_release:
+                app.root.current = 'main'
+                root.manager.transition.direction = 'left'
+
+<Error>:
+    name: 'error'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/error.jpg'
+        Label:
+            text: 'PASSORD UNCORRECT'
+    Button:
+        text:'TRY AGAIN'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'main'
+
 
