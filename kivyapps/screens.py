@@ -16,6 +16,8 @@ class MainWindow(Screen): # شاشة صعيرة
     pass
 class SeconedWindow(Screen): # شاشة صعيرة 
     pass
+class Error(Screen): # شاشة صعيرة 
+    pass
 class WindowManager(ScreenManager):  # هذي تعتبر الشاشة الرئيسية
     pass # حانكتب الاكواد في الملف الخارجي
 
