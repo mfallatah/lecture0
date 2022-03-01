@@ -12,11 +12,24 @@ Window.size=(400,630)
 
 # ScreenManager = استدعاء الوجهات من خلال 
 # اسم الكلاس اختياري لكن مابين القوسين ثابت
+# أنشأنا كلاس لكل نافذة
 class MainWindow(Screen): # شاشة صعيرة 
     pass
 class SeconedWindow(Screen): # شاشة صعيرة 
     pass
-class Error(Screen): # شاشة صعيرة 
+class Error(Screen): 
+    pass
+class Python(Screen): 
+    pass
+class Php(Screen): 
+    pass
+class Swift(Screen): 
+    pass
+class Djanco(Screen): 
+    pass
+class Sql(Screen): 
+    pass
+class Java(Screen): 
     pass
 class WindowManager(ScreenManager):  # هذي تعتبر الشاشة الرئيسية
     pass # حانكتب الاكواد في الملف الخارجي
