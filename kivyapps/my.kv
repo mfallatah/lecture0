@@ -3,13 +3,16 @@
 # GridLatout: للتقسيم لاسطر وصفوف
 # multiline = يمنع من النزول الى السطر التالي عند الضغط على انتر
 # password: True = يحول كلمة السر الة نجمية
-# on_release: = عند النقر
-# app.root.current ='seconed' if Passw.text == '123456' else 'main' اذا كلمة السر نفس  اللي كتبناها في دا السطر انتقل للصفحة الثانية او ابقى
-# root.manager.transition.direction ='up' اضافة يخلي الانتقال للصفحة التالية نحو الاعلى 
 WindowManager:
     MainWindow:
     SeconedWindow:
     Error:
+    Python:
+    Sql:
+    Java:
+    Php:
+    Djanco:
+    Swift:
 <MainWindow>:
     name: 'main'
     GridLayout:
@@ -34,9 +37,8 @@ WindowManager:
             text: 'LOGIN'
             size_hint:(0.1,0.1)
             on_release:
-                app.root.current ='seconed' if Passw.text == '123456' else 'error'
+                app.root.current = 'seconed' if Passw.text == '123123' else 'error'
                 root.manager.transition.direction ='up'
-
 <SeconedWindow>:
     name: 'seconed'
     GridLayout:
@@ -44,52 +46,158 @@ WindowManager:
         GridLayout:
             rows:2
             Image:
-                source:'img/error.jpg'
+                source:'img/pr.jpg'
             Label:
                 text: 'WELCOME PAGE'
         GridLayout:
             cols:2
             rows:3
             Button:
-                text: 'python'
-                size_hint:(0.1,0.1)
+                text: 'PYTHON'
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'python'
+                    root.manager.transition.direction ='left'
             Button:
                 text: 'PHP'
-                size_hint:(0.1,0.1)
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'php'
+                    root.manager.transition.direction ='left'
             Button:
                 text: 'JAVA'
-                size_hint:(0.1,0.1)
-            Button:
-                text: 'VISUAL'
-                size_hint:(0.1,0.1)
-            Button:
-                text: 'SWIFT'
-                size_hint:(0.1,0.1)
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'java'
+                    root.manager.transition.direction ='left'
             Button:
                 text: 'SQL'
-                size_hint:(0.1,0.1)
-
-
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'sql'
+                    root.manager.transition.direction ='left'
+            Button:
+                text: 'SWIFT'
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'swift'
+                    root.manager.transition.direction ='left'
+            Button:
+                text: 'DJANCO'
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current = 'djanco'
+                    root.manager.transition.direction ='left'
         Button:
-            text: 'BACk'
+            text: 'PACK'
             size_hint:(0.1,0.3)
             on_release:
                 app.root.current = 'main'
-                root.manager.transition.direction = 'left'
-
+                root.manager.transition.direction ='left'
 <Error>:
     name: 'error'
     GridLayout:
         cols:1
         rows:2
         Image:
-            source: 'img/error.jpg'
+            source: 'img/inc.jpg'
         Label:
-            text: 'PASSORD UNCORRECT'
+            text: 'Incorrrect Password'
     Button:
-        text:'TRY AGAIN'
+        text: 'TRY AGAIN'
         size_hint:(1,0.1)
         on_release:
             app.root.current = 'main'
 
+# نبرمج صفحة البايثون
+<Python>:
+    name: 'python'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/lp.jpg'
+        Label:
+            text: 'Lern Python With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
 
+
+<Php>:
+    name: 'php'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/php.jpg'
+        Label:
+            text: 'Lern PHP With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
+
+
+<Java>:
+    name: 'java'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/java.jpg'
+        Label:
+            text: 'Lern JAVA With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
+
+<Sql>:
+    name: 'sql'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/sql.jpg'
+        Label:
+            text: 'Lern SQL With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
+
+<Swift>:
+    name: 'swift'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/sw.jpg'
+        Label:
+            text: 'Lern SWIFT With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
+
+<Djanco>:
+    name: 'djanco'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source: 'img/dj.png'
+        Label:
+            text: 'Lern DJANCO With Mohammed Fallatah'
+    Button:
+        text: 'BACK'
+        size_hint:(1,0.1)
+        on_release:
+            app.root.current = 'seconed'
