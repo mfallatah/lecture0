@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Feedback</title>
+</head>
+<body>
+    <h1>Hotel Feedback </h1>
+    <form method="get">
+        
+        <h3>Are you from inside Maddinah or Outside</h3>
+        <label for="inmed">Inside</label>
+        <input id="inmed" type="radio" name="m" value="inmed">
+
+        <label for="outmed">Outside</label>
+        <input id="outmed" type="radio" name="m" value="outmed">
+        <!-- طريقة الربط بين الاختيارين بحيث ما اقدر اختار الاثنين مع بعض في نفس الوقت عن طريق اعطائهم نفس الاسم في خانة الاسم في انبت -->
+
+        <h2>How was your service?</h2>
+        <!-- قائمة اختيار مايظهر للمستخدم هو مابين فتح واغلاق التاق -->
+        <select name="stars" id="">
+            <option value="Great">3</option>
+            <option value="okay">2</option>
+            <option value="bad">1</option>
+        </select>
+        
+
+        <h2>Any othet feedback</h2>
+        <textarea name="my text" id="" cols="30" rows="10"></textarea>          <!-- لادخال نص من قبل المستخدم نستخدم تاق textarea -->
+
+        <input type="submit" value="SUBMIT">
+
+    </form>
+
+</body>
+</html>
