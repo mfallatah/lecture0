@@ -1,0 +1,34 @@
+/* نقطة ثم اسم الكلاس او ااي دي لاجراء تغيير مخصص */
+.first{
+    color: blue;
+}
+
+.sec{
+    color: red;
+}
+
+/* هاشتاق ثم اسم  ااي دي لاجراء تغيير مخصص */
+#singledout{
+    color: green;
+    text-decoration: overline;
+}
+
+/* النجمة تسوي تغيير على جميع العناصر الا الاي دي  */
+*{
+    color: black;
+
+}
+
+h3 + ul{
+    border: 4px dotted purple;
+}
+
+/* اقوائم اللتي تحنوي على روابط  */
+li a{
+    color: red;
+}
+
+li a[href="www.google.com"]{
+    color: blue;
+    border: 5px solid orange;
+}
