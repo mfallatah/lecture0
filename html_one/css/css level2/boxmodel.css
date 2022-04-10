@@ -1,0 +1,22 @@
+/* https://coolors.co/
+موقع محتص بالالوان
+
+موقع مختص بالخطوط
+https://www.cssfontstack.com/ */
+
+#top{  
+    /* حدود الخارجية مع المتصفخ */
+    border: 4px solid red;
+    width: 25%;
+    text-align: center;
+/* top,right,bootom,left */
+/* margin: 10px 20px 100px 400px; */
+margin: auto;
+}
+#botom{
+border: 4px solid blue;
+width: 50%;
+/* الحدود الداخلية مع المحتوى */
+padding: 200px;
+text-align: center;
+}

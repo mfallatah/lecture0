@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+}
+td{
+    
+    height: 300px;
+    width: 150px;
+    border: 6px solid white;
+}
+.art{
+    margin: auto;
+    /* يحلي المربعات في النص */
+    
+}
+
+#one{
+    
+    background-color: #a5a58d ;
+} 
+
+
+#tow{
+    background-color:#6b705c ;
+}
+
+#three{
+    background-color:#b7b7a4 ;
+}
+
+#four{
+    background-color:#ffe8d6 ;
+}
+
+#five{
+    background-color:#ddbea9 ;
+}
+
+/* #a5a58d
+#6b705c
+#b7b7a4
+#ffe8d6
+#ddbea9 */
