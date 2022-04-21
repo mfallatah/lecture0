@@ -1,0 +1,59 @@
+alert("Hello World")
+undefined
+// any thing here is a comment
+undefined
+// Data type
+undefined
+10
+10
+10.2
+10.2
+-13
+-13
+//string
+undefined
+"Hello World"
+'Hello World'
+"10"
+'10'
+//Bpllean
+undefined
+true
+true
+false
+false
+//undefined and null
+undefined
+undefined
+undefined
+null
+null
+// to clear the page "clear()"
+// all mathmatical opration done direct
+2+2
+4
+6*3
+18
+2-6
+-4
+2/6
+0.3333333333333333
+2 ** 4  tow power 4
+16
+15 % 4
+3 ناتج قسمة رقم صحيح
+"django is coll"
+'django is coll'
+"django" + "cool"
+'djangocool'
+"django".length
+6 طول الكلمة
+"hello \n start new line"
+'hello 
+ start new line'
+"hello \t give me a tab"
+'hello   give me a tab'
+'hello'[0]
+'h' indexing
+'hello'[0]
+'h' indexing
