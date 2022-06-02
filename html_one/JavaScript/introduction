@@ -68,4 +68,21 @@ var total = bankAcount + deposit
 total
 حايطبع 150 وهوا التوتال اللي عرفناه
 
+var greeting = "Wlcome Back";
+var name = "mohammed fallatah";
+alert(greeting+name);
+حاتطلع رسالة تنبي مكتوب فيه welcome back mohammed fallatah
 
+console.log("Hey I'm in the console")
+Hey I'm in the console
+
+
+prompt("Enter some thing")
+'mohammed'
+يظهر مربع ادخال  للمستخدم 
+
+
+var age = prompt ("Enter your age")
+ يظهر مربع ادخال للمستخدم يطلب ادخال العمر ولما يدخله ينطبع في الكونسول لما نكتب age
+ 
+ 
