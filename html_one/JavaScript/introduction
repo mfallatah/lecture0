@@ -57,3 +57,15 @@ null
 'h' indexing
 'hello'[0]
 'h' indexing
+
+var bankAcount = 100
+bankAcount 
+اللي فوق تعريف ولما نكتب بنك اكاونت راح يطبع 100
+var deposit = 50
+deposit
+حايطبع 50
+var total = bankAcount + deposit
+total
+حايطبع 150 وهوا التوتال اللي عرفناه
+
+
