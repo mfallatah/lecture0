@@ -1,4 +1,4 @@
-alert("Welcome to your bank")
-var pounds = prompt("What is the weight in pounds(lbs)")
-alert (pounds*0.454+"  Kilograms")
+var lbs = prompt("Weight in lbs")
+var kg = lbs*0.454
+alert ("That is: "+kg+" kilograms")
 console.log("Conversion Compleated!")
