@@ -85,4 +85,21 @@ prompt("Enter some thing")
 var age = prompt ("Enter your age")
  يظهر مربع ادخال للمستخدم يطلب ادخال العمر ولما يدخله ينطبع في الكونسول لما نكتب age
  
- 
+ comarison oprator 
+ 3>2
+true
+
+And
+1===1 && 2===3
+false
+
+// or
+1===1 || 1===2
+true
+
+Not
+!(1===1)
+false
+
+1 == "t"
+false
